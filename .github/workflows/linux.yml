@@ -1,0 +1,20 @@
+name: Linux
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    container:
+      image: norionomura/swift:5.3
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: swift build
+    - name: Test
+      run: swift test --enable-test-discovery
