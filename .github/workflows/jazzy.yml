@@ -1,0 +1,42 @@
+# Adapted from https://github.com/steipete/InterposeKitposeKit
+
+name: Jazzy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  Jazzy:
+    runs-on: ubuntu-latest
+    container:
+      image: norionomura/jazzy:0.13.5_swift-5
+    steps:
+      - uses: actions/checkout@v2
+      - run: swift build
+      - name: Generate documentation json
+        run: sourcekitten doc --spm-module LwIP > documentation.json
+      - name: Run jazzy
+        run: jazzy --clean --sourcekitten-sourcefile documentation.json
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: API Docs
+          path: docs
+      - name: Push to gh-pages
+        if: github.event_name == 'push'
+        run: |
+          git config --global user.email "${GITHUB_ACTOR}"
+          git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
+          git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" out
+          cd out
+          git checkout gh-pages
+          git rm --ignore-unmatch -rf .
+          cd ..
+          cp -a docs/. out/.
+          cd out
+          git add -A
+          git commit -m "Automated deployment to GitHub Pages: ${GITHUB_SHA}" --allow-empty
+          git push origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
