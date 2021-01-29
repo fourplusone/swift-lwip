@@ -1,0 +1,313 @@
+{
+  "warnings": [
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 3,
+      "symbol": "LwIPError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 4,
+      "symbol": "LwIPError.outOfMemory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 5,
+      "symbol": "LwIPError.bufferError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 6,
+      "symbol": "LwIPError.timeout",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 7,
+      "symbol": "LwIPError.routingProblem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 8,
+      "symbol": "LwIPError.operationInProgress",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 9,
+      "symbol": "LwIPError.illegalValue",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 10,
+      "symbol": "LwIPError.operationWouldBlock",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 11,
+      "symbol": "LwIPError.addressInUse",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 12,
+      "symbol": "LwIPError.alreadyConnecting",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 13,
+      "symbol": "LwIPError.connAlreadyEstablished",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 14,
+      "symbol": "LwIPError.notConnected",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 15,
+      "symbol": "LwIPError.netifError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 16,
+      "symbol": "LwIPError.connectionAborted",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 17,
+      "symbol": "LwIPError.connectionReset",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 18,
+      "symbol": "LwIPError.connectionClosed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/error.swift",
+      "line": 19,
+      "symbol": "LwIPError.illegalArgument",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 3,
+      "symbol": "IP4Network",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 5,
+      "symbol": "IP4Network.baseAddress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 6,
+      "symbol": "IP4Network.netmask",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 8,
+      "symbol": "IP4Network.init(prefix:baseAddress:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 20,
+      "symbol": "IP4Network.contains(address:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 25,
+      "symbol": "IP4Address",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 26,
+      "symbol": "IP4Address.&(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 40,
+      "symbol": "IP4Address.string",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 53,
+      "symbol": "IP4Address.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 65,
+      "symbol": "IP4Address.next(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 77,
+      "symbol": "UInt32.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 14,
+      "symbol": "TCPBase.State",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 15,
+      "symbol": "TCPBase.State.setup",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 16,
+      "symbol": "TCPBase.State.preparing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 17,
+      "symbol": "TCPBase.State.ready",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 18,
+      "symbol": "TCPBase.State.failed(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 19,
+      "symbol": "TCPBase.State.cancelled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/tcp.swift",
+      "line": 22,
+      "symbol": "TCPBase.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 4,
+      "symbol": "UDP",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 9,
+      "symbol": "UDP.RecvHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 11,
+      "symbol": "UDP.recvHandler",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 28,
+      "symbol": "UDP.init(recvHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 48,
+      "symbol": "UDP.bind(address:port:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 60,
+      "symbol": "UDP.bind(interface:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 70,
+      "symbol": "UDP.disconnect()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 84,
+      "symbol": "UDP.send(data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
+      "line": 97,
+      "symbol": "UDP.send(data:address:port:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/__w/swift-lwip/swift-lwip"
+}
