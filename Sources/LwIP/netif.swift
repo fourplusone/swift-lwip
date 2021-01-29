@@ -116,6 +116,12 @@ public class NetworkInterface: CallbackQueueProtocol {
             self.ready(self)
         }
     }
+    
+    /// Start dispatching events of the network interface and set the queue to deliver the events on.
+    /// - Parameter queue: The queue to dispatch the events on
+    public func start(queue: DispatchQueue) {
+        self.callbackQueue.start(queue: queue)
+    }
 
     /// Pass a packet to the network interface
     public func input(packet: Data) throws {
