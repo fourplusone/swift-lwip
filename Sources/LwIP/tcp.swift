@@ -223,6 +223,12 @@ public final class TCPListener: TCPBase {
             state = .ready
         }
     }
+    
+    /// Start dispatching events of the connection/listener and set the queue to deliver the events on.
+    /// - Parameter queue: The queue to dispatch the events on
+    public func start(queue: DispatchQueue) {
+        self.callbackQueue.start(queue: queue)
+    }
 
 }
 
@@ -290,7 +296,10 @@ public final class TCPConnection: TCPBase {
                     tcpip { tcp.recved0(len: UInt16(data.count)) }
                 })
             } else {
-                tcp.recved0(len: UInt16(data.count))
+                tcpip {
+                    tcp.recved0(len: UInt16(data.count))
+                }
+                
             }
         }
 
