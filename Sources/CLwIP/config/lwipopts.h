@@ -58,9 +58,9 @@
 #define sockaddr_storage LWIP_sockaddr_storage
 
 
+#ifdef __APPLE__
 #include <machine/endian.h>
-
-//#define LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS 1
+#endif
 
 #define TCP_LISTEN_BACKLOG              1
 
