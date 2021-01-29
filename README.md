@@ -7,7 +7,7 @@ Swift wrapper around the [_Lightweight IP Stack_ (LwIP)](http://savannah.nongnu.
 
 # Features
 
-Currently these LwIP featatures are supported:
+Currently these LwIP features are supported:
 
 - Network Interfaces
 - IPv4
