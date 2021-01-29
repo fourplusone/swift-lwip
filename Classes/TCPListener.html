@@ -17,7 +17,7 @@
     <a title="TCPListener Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (32% documented)</p>
+        <p><a href="../index.html"> Docs</a> (34% documented)</p>
         <p class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -181,7 +181,7 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>This handler will be called once a new connection has been accepted. The handler is responsible to
-set up the connection object properly and to call <code>start(queue:)</code></p>
+set up the connection object properly and to call <code><a href="../Classes/TCPListener.html#/s:4LwIP11TCPListenerC5start5queuey8Dispatch0F5QueueC_tF">start(queue:)</a></code></p>
 
                       </div>
                       <div class="declaration">
@@ -237,6 +237,52 @@ set up the connection object properly and to call <code>start(queue:)</code></p>
                               <td>
                                 <div>
                                   <p>The maximum number of connections which have not been accepted</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4LwIP11TCPListenerC5start5queuey8Dispatch0F5QueueC_tF"></a>
+                    <a name="//apple_ref/swift/Method/start(queue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP11TCPListenerC5start5queuey8Dispatch0F5QueueC_tF">start(queue:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start dispatching events of the connection/listener and set the queue to deliver the events on.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">start</span><span class="p">(</span><span class="nv">queue</span><span class="p">:</span> <span class="kt">DispatchQueue</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>queue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The queue to dispatch the events on</p>
                                 </div>
                               </td>
                             </tr>
