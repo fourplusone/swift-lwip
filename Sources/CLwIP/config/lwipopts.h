@@ -60,6 +60,8 @@
 
 #ifdef __APPLE__
 #include <machine/endian.h>
+#else
+#include <endian.h>
 #endif
 
 #define TCP_LISTEN_BACKLOG              1
