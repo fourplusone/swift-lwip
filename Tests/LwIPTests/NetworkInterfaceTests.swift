@@ -21,8 +21,6 @@ final class NetworkInterfaceTests: XCTestCase {
         }
     }
     
-    }
-    
     func testBasic() {
 
 
