@@ -38,6 +38,12 @@ public class UDP: CallbackQueueProtocol {
                      Unmanaged.passUnretained(self).toOpaque())
         }
     }
+    
+    /// Start dispatching events of the connection/listener and set the queue to deliver the events on.
+    /// - Parameter queue: The queue to dispatch the events on
+    public func start(queue: DispatchQueue) {
+        self.callbackQueue.start(queue: queue)
+    }
 
     private func bind0(address: IP4Address, port: UInt16) throws {
         try withUnsafePointer(to: address.address) { address in
