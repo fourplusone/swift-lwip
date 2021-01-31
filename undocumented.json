@@ -142,56 +142,42 @@
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 8,
-      "symbol": "IP4Network.init(prefix:baseAddress:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 20,
+      "line": 36,
       "symbol": "IP4Network.contains(address:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 25,
+      "line": 41,
       "symbol": "IP4Address",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 26,
+      "line": 42,
       "symbol": "IP4Address.&(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 40,
+      "line": 56,
       "symbol": "IP4Address.string",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 53,
-      "symbol": "IP4Address.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 65,
+      "line": 93,
       "symbol": "IP4Address.next(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 77,
+      "line": 105,
       "symbol": "UInt32.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
