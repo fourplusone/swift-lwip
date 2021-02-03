@@ -16,7 +16,7 @@ public class NetworkInterface: CallbackQueueProtocol {
 
     var inner: netif
     let output: (Data) -> Void
-    let ready : (_ interface: NetworkInterface) -> Void
+    let ready : ((_ interface: NetworkInterface) -> Void)?
     let mtu: UInt16
 
     var address: IP4Address { IP4Address(addr: inner.ip_addr ) }
@@ -36,7 +36,7 @@ public class NetworkInterface: CallbackQueueProtocol {
                 gateway: IP4Address,
                 mtu: UInt16 = 1500,
                 output: @escaping (Data) -> Void,
-                ready: @escaping (_ interface: NetworkInterface) -> Void) {
+                ready: ((_ interface: NetworkInterface) -> Void)? = nil) {
 
         var addr = address
         var mask = netmask
@@ -113,7 +113,7 @@ public class NetworkInterface: CallbackQueueProtocol {
                                   Int8(Character("0").asciiValue!) + Int8(UInt32(interfaceNumber) % 20))
         netif_set_link_up(interface)
         callback {
-            self.ready(self)
+            self.ready?(self)
         }
     }
     
