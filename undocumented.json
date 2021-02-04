@@ -120,13 +120,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/hooks.swift",
-      "line": 9,
-      "symbol": "IP4InputHookResult",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
       "line": 3,
       "symbol": "IP4Network",
