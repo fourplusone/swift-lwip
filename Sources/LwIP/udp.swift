@@ -1,13 +1,15 @@
 import CLwIP
 import Foundation
 
+/// UDP Socket.
 public class UDP: CallbackQueueProtocol {
     private var udpPcb: UnsafeMutablePointer<udp_pcb>?
 
     var callbackQueue: CallbackQueue = CallbackQueue()
 
     public typealias RecvHandler = (_ data: Data, _ ip: IP4Address, _ port: UInt16) -> Void
-
+    
+    /// This handler will be called, once a new packet arrives.
     public var recvHandler: RecvHandler?
 
     static private var recvFunction: udp_recv_fn = { arg, _, pbuf, addr, port in
@@ -60,7 +62,11 @@ public class UDP: CallbackQueueProtocol {
     private func bind0(interface: NetworkInterface) {
         udp_bind_netif(udpPcb, interface.inner)
     }
-
+    
+    /// Bind this socket to a network interface. All packets received via this socket
+    /// are guaranteed to have come in via the specified `NetworkInterface`, and all
+    /// outgoing packets will go out via the specified `NetworkInterface`
+    /// - Parameter interface: The network interface to bind to
     public func bind(interface: NetworkInterface) {
         tcpip {
             bind0(interface: interface)
@@ -71,6 +77,7 @@ public class UDP: CallbackQueueProtocol {
         udp_disconnect(udpPcb)
     }
 
+    /// Remove the socket.
     public func disconnect() {
         tcpip {
             udp_disconnect(udpPcb)
@@ -85,6 +92,7 @@ public class UDP: CallbackQueueProtocol {
         }
     }
 
+    /// Send a datagram to the current remote ip
     public func send(data: Data) throws {
         try tcpip {
             try send0(data: data)
@@ -98,6 +106,7 @@ public class UDP: CallbackQueueProtocol {
         }
     }
 
+    /// Send a datagram to a remote address
     public func send(data: Data, address: IP4Address, port: UInt16 ) throws {
         try tcpip {
             try send0(data: data, address: address, port: port)
