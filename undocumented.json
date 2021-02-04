@@ -184,7 +184,14 @@
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
-      "line": 105,
+      "line": 104,
+      "symbol": "IP4Address",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
+      "line": 109,
       "symbol": "UInt32.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
