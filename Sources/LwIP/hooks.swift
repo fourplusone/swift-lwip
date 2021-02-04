@@ -13,7 +13,7 @@ public enum IP4InputHookResult: Int32 {
     case consumed
 }
 
-/// Hook for processing packets of
+/// Hook for processing packets of all network interfaces
 public var ip4InputHook : ((Data, NetworkInterface)->IP4InputHookResult)? = nil
 
 func initializeHooks() {
