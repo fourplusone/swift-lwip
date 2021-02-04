@@ -14,14 +14,14 @@ public class NetworkInterface: CallbackQueueProtocol {
 
     static var interfaceNumber = 0
 
-    var inner: netif
+    var inner: UnsafeMutablePointer<netif>
     let output: (Data) -> Void
     let ready : ((_ interface: NetworkInterface) -> Void)?
     let mtu: UInt16
 
-    var address: IP4Address { IP4Address(addr: inner.ip_addr ) }
-    var netmask: IP4Address { IP4Address(addr: inner.netmask ) }
-    var gateway: IP4Address { IP4Address(addr: inner.gw ) }
+    var address: IP4Address { IP4Address(addr: inner.pointee.ip_addr ) }
+    var netmask: IP4Address { IP4Address(addr: inner.pointee.netmask ) }
+    var gateway: IP4Address { IP4Address(addr: inner.pointee.gw ) }
 
     /// Create a new Network Interface
     /// - Parameters:
@@ -42,7 +42,7 @@ public class NetworkInterface: CallbackQueueProtocol {
         var mask = netmask
         var gateway = gateway
 
-        self.inner = netif()
+        self.inner = UnsafeMutablePointer<netif>.allocate(capacity: 1)
         self.output = output
         self.mtu = mtu
         self.ready = ready
@@ -60,7 +60,7 @@ public class NetworkInterface: CallbackQueueProtocol {
         initializeTCPIP()
 
         tcpip {
-            guard netif_add(&self.inner,
+            guard netif_add(inner,
                             &addr.address,
                             &mask.address,
                             &gateway.address,
@@ -70,12 +70,12 @@ public class NetworkInterface: CallbackQueueProtocol {
                 abort()
             }
 
-            netif_set_up(&self.inner)
+            netif_set_up(inner)
         }
 
     }
 
-    private static func from(netif: UnsafePointer<netif>) -> NetworkInterface? {
+    static func from(netif: UnsafePointer<netif>) -> NetworkInterface? {
         if let state = netif.pointee.state {
             return Unmanaged<NetworkInterface>.fromOpaque(state).takeUnretainedValue()
         }
@@ -127,13 +127,13 @@ public class NetworkInterface: CallbackQueueProtocol {
     public func input(packet: Data) throws {
         try packet.withPbuf { (buf) -> Void in
             pbuf_ref(buf)
-            try inner.input(buf, &self.inner).throw()
+            try inner.pointee.input(buf, inner).throw()
         }
     }
 
     private func remove0() {
-        self.inner.state = nil
-        netif_remove(&self.inner)
+        self.inner.pointee.state = nil
+        netif_remove(inner)
     }
 
     /// Remove the interface
@@ -145,5 +145,6 @@ public class NetworkInterface: CallbackQueueProtocol {
 
     deinit {
         self.remove()
+        inner.deallocate()
     }
 }

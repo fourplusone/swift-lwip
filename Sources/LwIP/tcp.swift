@@ -113,9 +113,7 @@ public class TCPBase: CallbackQueueProtocol {
 
     private func bind0(interface: NetworkInterface) {
         guard tcpPcb != nil else { return }
-        withUnsafePointer(to: interface.inner) { netif in
-            tcp_bind_netif(self.tcpPcb, netif)
-        }
+        tcp_bind_netif(self.tcpPcb, interface.inner)
     }
 
     /// Bind to connection/listener to a network interface. All packets sent/received are guaranteed to have

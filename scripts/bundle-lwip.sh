@@ -17,8 +17,10 @@ mkdir "$DESTINATION_DIR/src"
 rm -r "$DESTINATION_DIR/port"
 mkdir "$DESTINATION_DIR/port"
 
-rm -r "$DESTINATION_DIR/include"
-mkdir "$DESTINATION_DIR/include"
+rm -rf "$DESTINATION_DIR/include/api"
+rm -rf "$DESTINATION_DIR/include/lwip"
+rm -rf "$DESTINATION_DIR/include/netif"
+
 
 
 pushd "$TEMPDIR"

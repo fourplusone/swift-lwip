@@ -58,9 +58,7 @@ public class UDP: CallbackQueueProtocol {
     }
 
     private func bind0(interface: NetworkInterface) {
-        withUnsafePointer(to: interface.inner) { netif in
-            udp_bind_netif(udpPcb, netif)
-        }
+        udp_bind_netif(udpPcb, interface.inner)
     }
 
     public func bind(interface: NetworkInterface) {

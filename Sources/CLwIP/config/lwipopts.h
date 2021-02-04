@@ -74,6 +74,11 @@
 //#define TCP_RST_DEBUG 0x80
 
 
+#define LWIP_HOOK_IP4_ROUTE_SRC lwip_hook_ip4_route_src
+#define LWIP_HOOK_IP4_INPUT lwip_hook_ip4_input
+
+#define LWIP_HOOK_FILENAME "hooks.h"
+
 #define MEM_LIBC_MALLOC 1
 
 #define LWIP_TCPIP_CORE_LOCKING_INPUT 1

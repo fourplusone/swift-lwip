@@ -4,9 +4,11 @@ import CLwIP
 private var tcpipIntialized : () = {
     let sema = DispatchSemaphore(value: 0)
     tcpip_init({ unmanagedSema in
+        
+        initializeHooks()
+        
         let sema = Unmanaged<DispatchSemaphore>.fromOpaque(unmanagedSema!).takeRetainedValue()
         sema.signal()
-
     }, Unmanaged<DispatchSemaphore>.passRetained(sema).toOpaque())
     sema.wait()
 }()
