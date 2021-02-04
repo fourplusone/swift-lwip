@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Extensions  Reference</title>
+    <title>Global Variables  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Extensions" class="dashAnchor"></a>
-    <a title="Extensions  Reference"></a>
+    <a name="//apple_ref/swift/Section/Global Variables" class="dashAnchor"></a>
+    <a title="Global Variables  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (42% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" />
-        Extensions  Reference
+        Global Variables  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -104,8 +104,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Extensions</h1>
-            <p>The following extensions are available globally.</p>
+            <h1>Global Variables</h1>
+            <p>The following global variables are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -114,9 +114,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s6UInt32V"></a>
-                    <a name="//apple_ref/swift/Extension/UInt32" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s6UInt32V">UInt32</a>
+                    <a name="/s:4LwIP12ip4RouteHookAA16NetworkInterfaceCSgAA10IP4AddressV_AGtcSgvp"></a>
+                    <a name="//apple_ref/swift/Global/ip4RouteHook" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP12ip4RouteHookAA16NetworkInterfaceCSgAA10IP4AddressV_AGtcSgvp">ip4RouteHook</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -124,14 +124,42 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
-                        <a href="Extensions/UInt32.html" class="slightly-smaller">See more</a>
+                        <p>Hook for manally specifying a route from <code>src</code> to <code>dest</code>
+This will only be called when no interface can be found based on the IP Address</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">UInt32</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">ip4RouteHook</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">src</span><span class="p">:</span> <span class="kt"><a href="Structs/IP4Address.html">IP4Address</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">dest</span><span class="p">:</span> <span class="kt"><a href="Structs/IP4Address.html">IP4Address</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Classes/NetworkInterface.html">NetworkInterface</a></span><span class="p">?)?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4LwIP12ip4InputHookAA03IP4dE6ResultO10Foundation4DataV_AA16NetworkInterfaceCtcSgvp"></a>
+                    <a name="//apple_ref/swift/Global/ip4InputHook" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP12ip4InputHookAA03IP4dE6ResultO10Foundation4DataV_AA16NetworkInterfaceCtcSgvp">ip4InputHook</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hook for processing packets of</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">ip4InputHook</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">,</span> <span class="kt"><a href="Classes/NetworkInterface.html">NetworkInterface</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="Enums/IP4InputHookResult.html">IP4InputHookResult</a></span><span class="p">)?</span></code></pre>
 
                         </div>
                       </div>

@@ -120,6 +120,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/hooks.swift",
+      "line": 9,
+      "symbol": "IP4InputHookResult",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/ipv4.swift",
       "line": 3,
       "symbol": "IP4Network",
@@ -268,28 +275,28 @@
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 66,
+      "line": 64,
       "symbol": "UDP.bind(interface:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 76,
+      "line": 74,
       "symbol": "UDP.disconnect()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 90,
+      "line": 88,
       "symbol": "UDP.send(data:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 103,
+      "line": 101,
       "symbol": "UDP.send(data:address:port:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
