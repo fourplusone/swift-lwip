@@ -240,64 +240,22 @@
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 4,
-      "symbol": "UDP",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 9,
+      "line": 10,
       "symbol": "UDP.RecvHandler",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 11,
-      "symbol": "UDP.recvHandler",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 28,
+      "line": 30,
       "symbol": "UDP.init(recvHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 54,
+      "line": 56,
       "symbol": "UDP.bind(address:port:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 64,
-      "symbol": "UDP.bind(interface:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 74,
-      "symbol": "UDP.disconnect()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 88,
-      "symbol": "UDP.send(data:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/__w/swift-lwip/swift-lwip/Sources/LwIP/udp.swift",
-      "line": 101,
-      "symbol": "UDP.send(data:address:port:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
