@@ -101,6 +101,10 @@ public struct IP4Address: Hashable {
     }
 }
 
+extension IP4Address: CustomStringConvertible {
+    public var description: String { self.string }
+}
+
 public extension UInt32 {
     init(_ ip4: IP4Address) {
         self.init(bigEndian: ip4.address.addr)
