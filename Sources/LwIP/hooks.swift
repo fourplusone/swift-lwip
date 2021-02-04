@@ -1,27 +1,28 @@
 import CLwIP
 import Foundation
 
+enum Hooks {
+    /// Hook for manally specifying a route from `src` to `dest`
+    /// This will only be called when no interface can be found based on the IP Address
+    public static var ip4RouteHook : ((_ src: IP4Address, _ dest:IP4Address)->NetworkInterface?)? = nil
 
-/// Hook for manally specifying a route from `src` to `dest`
-/// This will only be called when no interface can be found based on the IP Address
-public var ip4RouteHook : ((_ src: IP4Address, _ dest:IP4Address)->NetworkInterface?)? = nil
+    public enum IP4InputHookResult: Int32 {
+        /// The packet has been ignored
+        case ignored = 0
+        /// The packet has been consumed and will not be processed further
+        case consumed
+    }
 
-public enum IP4InputHookResult: Int32 {
-    /// The packet has been ignored
-    case ignored = 0
-    /// The packet has been consumed and will not be processed further
-    case consumed
+    /// Hook for processing packets of all network interfaces
+    public static var ip4InputHook : ((Data, NetworkInterface)->IP4InputHookResult)? = nil
 }
-
-/// Hook for processing packets of all network interfaces
-public var ip4InputHook : ((Data, NetworkInterface)->IP4InputHookResult)? = nil
 
 func initializeHooks() {
     assertCoreLocked()
     lwip_set_hook_ip4_route_src { (src, dest) -> UnsafeMutablePointer<netif>? in
         guard let src = src?.pointee else { return nil }
         guard let dest = dest?.pointee else { return nil }
-        let interface = ip4RouteHook?(IP4Address(addr: src), IP4Address(addr: dest))
+        let interface = Hooks.ip4RouteHook?(IP4Address(addr: src), IP4Address(addr: dest))
         return interface?.inner
     }
     
@@ -31,7 +32,7 @@ func initializeHooks() {
             return 0
         }
         
-        let result = ip4InputHook?(Data(packet), interface) ?? .ignored
+        let result = Hooks.ip4InputHook?(Data(packet), interface) ?? .ignored
         
         if result == .consumed {
             pbuf_free(packet)
