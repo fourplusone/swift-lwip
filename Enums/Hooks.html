@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TCPBase Class Reference</title>
+    <title>Hooks Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/TCPBase" class="dashAnchor"></a>
-    <a title="TCPBase Class Reference"></a>
+    <a name="//apple_ref/swift/Enum/Hooks" class="dashAnchor"></a>
+    <a title="Hooks Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (51% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        TCPBase Class Reference
+        Hooks Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -96,15 +96,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>TCPBase</h1>
+            <h1>Hooks</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TCPBase</span> <span class="p">:</span> <span class="kt">CallbackQueueProtocol</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Hooks</span></code></pre>
 
                 </div>
               </div>
-            <p>Abstract base class for connections and listeners</p>
+            <p>Hooks defined by LwIP to add custom logic for processing IP packets</p>
 
           </section>
           <section class="section task-group-section">
@@ -113,9 +113,41 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4LwIP7TCPBaseC5StateO"></a>
-                    <a name="//apple_ref/swift/Enum/State" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5StateO">State</a>
+                    <a name="/s:4LwIP5HooksO12ip4RouteHookAA16NetworkInterfaceCSgAA10IP4AddressV_AItcSgvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/ip4RouteHook" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP5HooksO12ip4RouteHookAA16NetworkInterfaceCSgAA10IP4AddressV_AItcSgvpZ">ip4RouteHook</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hook for manally specifying a route from <code>src</code> to <code>dest</code>
+This will be called for any outgoing packet before any other routes will be evaluated.</p>
+
+<p>If no network interface is returned, the default routing mechanism is being applied
+<strong>Important</strong> The hook will be evaulated in the context of the TCP/IP stack. Therefore, any access to
+TCP/IP related functions (like for example sending packets) will result in a deadlock.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">ip4RouteHook</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">src</span><span class="p">:</span> <span class="kt"><a href="../Structs/IP4Address.html">IP4Address</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">dest</span><span class="p">:</span> <span class="kt"><a href="../Structs/IP4Address.html">IP4Address</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NetworkInterface.html">NetworkInterface</a></span><span class="p">?)?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4LwIP5HooksO18IP4InputHookResultO"></a>
+                    <a name="//apple_ref/swift/Enum/IP4InputHookResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP5HooksO18IP4InputHookResultO">IP4InputHookResult</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -125,13 +157,13 @@
                       <div class="abstract">
                         <p>Undocumented</p>
 
-                        <a href="../Classes/TCPBase/State.html" class="slightly-smaller">See more</a>
+                        <a href="../Enums/Hooks/IP4InputHookResult.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">State</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">IP4InputHookResult</span> <span class="p">:</span> <span class="kt">Int32</span></code></pre>
 
                         </div>
                       </div>
@@ -141,9 +173,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4LwIP7TCPBaseC5stateAC5StateOvp"></a>
-                    <a name="//apple_ref/swift/Property/state" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5stateAC5StateOvp">state</a>
+                    <a name="/s:4LwIP5HooksO12ip4InputHookAC03IP4eF6ResultO10Foundation4DataV_AA16NetworkInterfaceCtcSgvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/ip4InputHook" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP5HooksO12ip4InputHookAC03IP4eF6ResultO10Foundation4DataV_AA16NetworkInterfaceCtcSgvpZ">ip4InputHook</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -151,68 +183,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Hook for processing incoming packets of all network interfaces.</p>
+
+<p><strong>Important</strong> The hook will be evaulated in the context of the TCP/IP stack. Therefore, any access to
+TCP/IP related functions (like for example sending packets) will result in a deadlock.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">state</span><span class="p">:</span> <span class="kt"><a href="../Classes/TCPBase/State.html">State</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:4LwIP7TCPBaseC18stateUpdateHandleryAC5StateOcSgvp"></a>
-                    <a name="//apple_ref/swift/Property/stateUpdateHandler" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC18stateUpdateHandleryAC5StateOcSgvp">stateUpdateHandler</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Handler that will be called on state changes</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">stateUpdateHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Classes/TCPBase/State.html">State</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:4LwIP7TCPBaseC5closeyyF"></a>
-                    <a name="//apple_ref/swift/Method/close()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5closeyyF">close()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Closes the connection</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">ip4InputHook</span><span class="p">:</span> <span class="p">((</span><span class="kt">Data</span><span class="p">,</span> <span class="kt"><a href="../Classes/NetworkInterface.html">NetworkInterface</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/Hooks/IP4InputHookResult.html">IP4InputHookResult</a></span><span class="p">)?</span></code></pre>
 
                         </div>
                       </div>

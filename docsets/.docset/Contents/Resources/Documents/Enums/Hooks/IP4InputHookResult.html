@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>State Enumeration Reference</title>
+    <title>IP4InputHookResult Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/State" class="dashAnchor"></a>
-    <a title="State Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Enum/IP4InputHookResult" class="dashAnchor"></a>
+    <a title="IP4InputHookResult Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html"> Docs</a> (51% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html"> Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        State Enumeration Reference
+        IP4InputHookResult Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -96,11 +96,11 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>State</h1>
+            <h1>IP4InputHookResult</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">State</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">IP4InputHookResult</span> <span class="p">:</span> <span class="kt">Int32</span></code></pre>
 
                 </div>
               </div>
@@ -113,9 +113,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4LwIP7TCPBaseC5StateO5setupyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/setup" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5StateO5setupyA2EmF">setup</a>
+                    <a name="/s:4LwIP5HooksO18IP4InputHookResultO7ignoredyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/ignored" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP5HooksO18IP4InputHookResultO7ignoredyA2EmF">ignored</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -123,14 +123,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The packet has been ignored</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">setup</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ignored</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
 
                         </div>
                       </div>
@@ -140,9 +140,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4LwIP7TCPBaseC5StateO9preparingyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/preparing" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5StateO9preparingyA2EmF">preparing</a>
+                    <a name="/s:4LwIP5HooksO18IP4InputHookResultO8consumedyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/consumed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP5HooksO18IP4InputHookResultO8consumedyA2EmF">consumed</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -150,95 +150,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The packet has been consumed and will not be processed further</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">preparing</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:4LwIP7TCPBaseC5StateO5readyyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/ready" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5StateO5readyyA2EmF">ready</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ready</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:4LwIP7TCPBaseC5StateO6failedyAeA0A7IPErrorOcAEmF"></a>
-                    <a name="//apple_ref/swift/Element/failed(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5StateO6failedyAeA0A7IPErrorOcAEmF">failed(_:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">failed</span><span class="p">(</span><span class="kt"><a href="../../Enums/LwIPError.html">LwIPError</a></span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:4LwIP7TCPBaseC5StateO9cancelledyA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/cancelled" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4LwIP7TCPBaseC5StateO9cancelledyA2EmF">cancelled</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">cancelled</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">consumed</span></code></pre>
 
                         </div>
                       </div>
