@@ -1,9 +1,15 @@
 import CLwIP
 import Foundation
 
-enum Hooks {
+
+/// Hooks defined by LwIP to add custom logic for processing IP packets
+public enum Hooks {
     /// Hook for manally specifying a route from `src` to `dest`
-    /// This will only be called when no interface can be found based on the IP Address
+    /// This will be called for any outgoing packet before any other routes will be evaluated.
+    ///
+    /// If no network interface is returned, the default routing mechanism is being applied
+    /// __Important__ The hook will be evaulated in the context of the TCP/IP stack. Therefore, any access to
+    /// TCP/IP related functions (like for example sending packets) will result in a deadlock.
     public static var ip4RouteHook : ((_ src: IP4Address, _ dest:IP4Address)->NetworkInterface?)? = nil
 
     public enum IP4InputHookResult: Int32 {
@@ -13,7 +19,10 @@ enum Hooks {
         case consumed
     }
 
-    /// Hook for processing packets of all network interfaces
+    /// Hook for processing incoming packets of all network interfaces.
+    ///
+    /// __Important__ The hook will be evaulated in the context of the TCP/IP stack. Therefore, any access to
+    /// TCP/IP related functions (like for example sending packets) will result in a deadlock.
     public static var ip4InputHook : ((Data, NetworkInterface)->IP4InputHookResult)? = nil
 }
 
