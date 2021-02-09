@@ -19,9 +19,14 @@ public class NetworkInterface: CallbackQueueProtocol {
     let ready : ((_ interface: NetworkInterface) -> Void)?
     let mtu: UInt16
 
-    var address: IP4Address { IP4Address(addr: inner.pointee.ip_addr ) }
-    var netmask: IP4Address { IP4Address(addr: inner.pointee.netmask ) }
-    var gateway: IP4Address { IP4Address(addr: inner.pointee.gw ) }
+    /// IPv4 address of the interface
+    public var address: IP4Address { IP4Address(addr: inner.pointee.ip_addr ) }
+    
+    /// IPv4 netmask of the interface
+    public var netmask: IP4Address { IP4Address(addr: inner.pointee.netmask ) }
+    
+    /// IPv4 gateway of the interface
+    public var gateway: IP4Address { IP4Address(addr: inner.pointee.gw ) }
 
     /// Create a new Network Interface
     /// - Parameters:
