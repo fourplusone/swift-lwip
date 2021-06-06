@@ -397,27 +397,38 @@ public final class TCPConnection: TCPBase {
     }
 
     /// Data that has not been processed by the tcpip stack yet
-    var pendingData: [UInt8] = []
+    var pendingData: ArraySlice<UInt8> = []
 
     /// Forward pending data to the tcp ip stack.
     private func writePendingData0() {
 
-        guard let pcb = tcpPcb else { return }
-        let sendBuffer = pcb.pointee.snd_buf
-        guard sendBuffer > 0 else { return }
-
+        guard pendingData.count > 0,
+              let pcb = tcpPcb,
+              let sendBuffer = Optional(pcb.pointee.snd_buf),
+              sendBuffer > 0
+              else { return }
+        
         let sendSize = min(Int(sendBuffer), pendingData.count)
-        let toSend = pendingData[0 ..< sendSize]
+        
+        let toSend = pendingData[
+            pendingData.startIndex ..< pendingData.startIndex.advanced(by: sendSize)
+        ]
+        
+        var flags : u8_t = u8_t(TCP_WRITE_FLAG_COPY)
+        
+        if sendSize < pendingData.count {
+            flags |= u8_t(TCP_WRITE_FLAG_MORE)
+        }
 
         let result = toSend.withUnsafeBytes { (pointer: UnsafeRawBufferPointer) -> err_t in
-            tcp_write(tcpPcb, pointer.baseAddress, u16_t(pointer.count), u8_t(TCP_WRITE_FLAG_COPY))
+            tcp_write(tcpPcb, pointer.baseAddress, u16_t(pointer.count), flags)
         }
 
         if let error = result.error {
             self.state = .failed(error)
             self.forceClose()
         } else {
-            self.pendingData[0...] = pendingData[sendSize...]
+            self.pendingData = pendingData[pendingData.startIndex.advanced(by: sendSize)...]
         }
 
         do {
@@ -444,7 +455,7 @@ public final class TCPConnection: TCPBase {
         guard tcpPcb != nil else { return }
 
         sendQueue += UInt64(data.count)
-        pendingData = [UInt8](data)
+        pendingData = ArraySlice(data)
         writeCompletionHandler = completion
         writePendingData0()
     }
