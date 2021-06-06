@@ -45,13 +45,10 @@ public class TCPBase: CallbackQueueProtocol {
     static private var errorFunction: tcp_err_fn = { arg, err -> Void in
         guard let arg = arg else { return }
         let tcp = Unmanaged<TCPBase>.fromOpaque(arg).takeUnretainedValue()
-        tcp.tcpPcb = nil
 
         let error = LwIPError(rawValue: Int(err.rawValue))!
-        tcp.state = .failed(error)
-
-        tcp.release0()
-
+        tcp.error0(error)
+        
     }
 
     init() {
@@ -128,26 +125,30 @@ public class TCPBase: CallbackQueueProtocol {
         }
     }
 
-    private func close0() {
-        assertCoreLocked()
-        if let inner = tcpPcb {
-            self.tcpPcb = nil
-            tcp_arg(inner, nil)
-            try! tcp_close(inner).throw()
-            state = .cancelled
-        }
+    func close0() {
+        state = .cancelled
+        release0()
     }
 
     /// Closes the connection
     public func close() {
-        tcpip {
-            release0()
-            close0()
-        }
+        tcpip { close0() }
+    }
+    
+    func error0(_ error: LwIPError) {
+        state = .failed(error)
+        release0()
     }
 
-    func release0() {
+    private func release0() {
         assertCoreLocked()
+        
+        if let pcb = tcpPcb {
+            tcp_arg(pcb, nil)
+            try! tcp_close(pcb).throw()
+        }
+        tcpPcb = nil
+        
         if let retained = retainedUntilClosed {
             retainedUntilClosed = nil
             callback {
@@ -271,12 +272,7 @@ public final class TCPConnection: TCPBase {
 
         guard let pbuf = pbuf else {
             // Connection was closed
-            tcp_arg(tcp.tcpPcb, nil)
-            tcp.tcpPcb = nil
-            tcp.state = .cancelled
-
-            tcp.release0()
-
+            tcp.close0()
             return ERR_OK
         }
         defer { pbuf_free(pbuf) }
@@ -347,7 +343,8 @@ public final class TCPConnection: TCPBase {
 
     private func connect0(address: IP4Address, port: UInt16) throws {
         guard tcpPcb != nil else { return }
-
+        
+        state = .preparing
         try withUnsafePointer(to: address.address) { address  in
             tcp_connect(tcpPcb, address, port, TCPConnection.connectedFunction)
         }.throw()
@@ -360,7 +357,6 @@ public final class TCPConnection: TCPBase {
     /// - Throws: LwIP error
     public func connect(address: IP4Address, port: UInt16) throws {
         try tcpip {
-            state = .preparing
             try connect0(address: address, port: port)
         }
     }
@@ -425,8 +421,7 @@ public final class TCPConnection: TCPBase {
         }
 
         if let error = result.error {
-            self.state = .failed(error)
-            self.forceClose()
+            error0(error)
         } else {
             self.pendingData = pendingData[pendingData.startIndex.advanced(by: sendSize)...]
         }
@@ -434,8 +429,7 @@ public final class TCPConnection: TCPBase {
         do {
             try output0()
         } catch let error as LwIPError {
-            self.state = .failed(error)
-            self.forceClose()
+            error0(error)
         } catch {  }
 
         // More data can be handled by the TCP Stack
