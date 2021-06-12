@@ -374,7 +374,8 @@ public final class TCPConnection: TCPBase {
         }
     }
 
-    func forceClose() {
+    /// Close the connection immediately
+    public func forceClose() {
         super.close()
     }
 
