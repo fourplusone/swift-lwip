@@ -47,6 +47,7 @@
 #define iovec iovec
 
 #define in6_addr LWIP_in6_addr
+#define ip6_hdr LWIP_ip6_hdr
 #define ifreq LWIP_ifreq
 #define in_pktinfo LWIP_in_pktinfo
 #define in6addr_any LWIP_in6addr_any
