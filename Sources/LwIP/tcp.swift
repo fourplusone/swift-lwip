@@ -302,6 +302,7 @@ public final class TCPConnection: TCPBase {
 
     /// This handler is called once new data is available. Once the data has been processed by the application
     /// `completionHandler()` must be called to request more data
+    /// To avoid memory leaks. This handler will be set to `nil` once the connection has been closed
     public var recvHandler : ((_ data: Data, _ completionHandler: @escaping () -> Void) -> Void)?
 
     /// Whether the connection should be closed once all scheduled data has been processed
@@ -390,6 +391,18 @@ public final class TCPConnection: TCPBase {
         if !shouldCloseGracefully {
             forceClose()
         }
+    }
+    
+    override func close0() {
+        super.close0()
+        writeCompletionHandler = nil
+        recvHandler = nil
+    }
+    
+    override func error0(_ error: LwIPError) {
+        super.error0(error)
+        writeCompletionHandler = nil
+        recvHandler = nil
     }
 
     /// Data that has not been processed by the tcpip stack yet
