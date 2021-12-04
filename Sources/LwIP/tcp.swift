@@ -102,7 +102,7 @@ public class TCPBase: CallbackQueueProtocol {
     ///   - address: IP Address to bind to
     ///   - port: Port to bind to
     /// - Throws: LwIP Error
-    func bind(address: IP4Address, port: UInt16) throws {
+    public func bind(address: IP4Address, port: UInt16) throws {
         try tcpip {
             try bind0(address: address, port: port)
         }
@@ -119,7 +119,7 @@ public class TCPBase: CallbackQueueProtocol {
     ///   - address: IP Address to bind to
     ///   - port: Port to bind to
     /// - Throws: LwIP Error
-    func bind(interface: NetworkInterface) {
+    public func bind(interface: NetworkInterface) {
         tcpip {
             bind0(interface: interface)
         }
