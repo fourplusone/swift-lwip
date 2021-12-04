@@ -17,7 +17,7 @@
     <a title="TCPBase Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (53% documented)</p>
+        <p><a href="../index.html"> Docs</a> (54% documented)</p>
         <p class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -195,6 +195,133 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:4LwIP7TCPBaseC4bind7address4portyAA10IP4AddressV_s6UInt16VtKF"></a>
+                    <a name="//apple_ref/swift/Method/bind(address:port:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP7TCPBaseC4bind7address4portyAA10IP4AddressV_s6UInt16VtKF">bind(address:<wbr>port:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bind to connection/listener to a address &amp; port.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    LwIP Error
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">bind</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Structs/IP4Address.html">IP4Address</a></span><span class="p">,</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>IP Address to bind to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>port</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Port to bind to</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4LwIP7TCPBaseC4bind9interfaceyAA16NetworkInterfaceC_tF"></a>
+                    <a name="//apple_ref/swift/Method/bind(interface:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4LwIP7TCPBaseC4bind9interfaceyAA16NetworkInterfaceC_tF">bind(interface:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bind to connection/listener to a network interface. All packets sent/received are guaranteed to have
+come in via the specified <code><a href="../Classes/NetworkInterface.html">NetworkInterface</a></code>, and all outgoing packets will go out via the specified <code><a href="../Classes/NetworkInterface.html">NetworkInterface</a></code>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    LwIP Error
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">bind</span><span class="p">(</span><span class="nv">interface</span><span class="p">:</span> <span class="kt"><a href="../Classes/NetworkInterface.html">NetworkInterface</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>IP Address to bind to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>port</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Port to bind to</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:4LwIP7TCPBaseC5closeyyF"></a>
                     <a name="//apple_ref/swift/Method/close()" class="dashAnchor"></a>
                     <a class="token" href="#/s:4LwIP7TCPBaseC5closeyyF">close()</a>
@@ -224,7 +351,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-12-01)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-12-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
